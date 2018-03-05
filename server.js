@@ -26,7 +26,7 @@ app.post('/', function (req, res) {
       if(weather.main == undefined){
         res.render('index', {weather: null, error: 'Lỗi! Xin thử lại'});
       } else {
-        let weatherTemp = S(`Hihi đang là ${weather.main.temp} độ C tại ${weather.name}\r\nSức gió: ${weather.main.pressure}\r\n`);
+        let weatherTemp = S(`Hihi đang là ${weather.main.temp} độ C tại ${weather.name}\r\nHPA: ${weather.main.pressure}\r\n`);
         res.render('index', {weather: weatherTemp, error: null});
         //let weatherPressure = `Sức gió: ${weather.main.pressure} hpA`;
 
@@ -37,4 +37,4 @@ app.post('/', function (req, res) {
 
 app.listen(3000, function () {
   console.log('App listening on port 3000!')
-})
+})  
